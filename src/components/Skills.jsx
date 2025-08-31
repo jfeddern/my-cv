@@ -6,7 +6,7 @@ import { useState, useMemo } from 'react'
 const Skills = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
-  const itemsPerPage = 10
+  const itemsPerPage = 20
   const skillCategories = [
     {
       title: "Cloud Platforms",
@@ -26,7 +26,7 @@ const Skills = () => {
     {
       title: "CI/CD & Automation",
       icon: "🔄",
-      skills: ["GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps", "Tekton"]
+      skills: ["GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps", "ArgoCD"]
     },
     {
       title: "Programming Languages",
@@ -41,7 +41,7 @@ const Skills = () => {
     {
       title: "Monitoring & Observability",
       icon: "📊",
-      skills: ["Prometheus", "Grafana", "Instana", "Datadog", "New Relic", "Jaeger"]
+      skills: ["Prometheus", "Grafana", "Instana", "Datadog", "Splunk", "OpenTelemetry"]
     },
     {
       title: "Security & Compliance",
@@ -57,9 +57,9 @@ const Skills = () => {
 
   const topSkills = [
     { name: "AWS", level: 95, color: "from-orange-400 to-orange-600" },
-    { name: "Kubernetes", level: 90, color: "from-blue-400 to-blue-600" },
-    { name: "Terraform", level: 92, color: "from-purple-400 to-purple-600" },
-    { name: "Python", level: 88, color: "from-green-400 to-green-600" },
+    { name: "Kubernetes", level: 95, color: "from-blue-400 to-blue-600" },
+    { name: "Go", level: 85, color: "from-purple-400 to-purple-600" },
+    { name: "Python", level: 80, color: "from-green-400 to-green-600" },
     { name: "DevOps", level: 94, color: "from-red-400 to-red-600" },
     { name: "Product Management", level: 85, color: "from-indigo-400 to-indigo-600" }
   ]
@@ -73,7 +73,7 @@ const Skills = () => {
     // Infrastructure as Code
     "Terraform", "Ansible", "Pulumi", "CloudFormation", "ARM Templates",
     // CI/CD & Automation
-    "GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps", "Tekton",
+    "GitHub Actions", "Jenkins", "GitLab CI", "Azure DevOps", "ArgoCD",
     // Programming Languages
     "Java", "Kotlin", "Python", "Go", "JavaScript", "TypeScript", "Bash", "PowerShell", "C#", "Node.js",
     // Databases
@@ -81,11 +81,11 @@ const Skills = () => {
     // Monitoring & Observability
     "Prometheus", "Grafana", "Instana", "Datadog", "New Relic", "Jaeger", "ELK Stack", "Splunk",
     // Security & Compliance
-    "Wazuh", "SIEM", "Vault", "OWASP", "Compliance Frameworks", "IAM", "OAuth", "LDAP",
+    "Wazuh", "SIEM", "Vault", "OWASP", "Compliance Frameworks", "IAM", "OAuth", "Falco",
     // Agile & Product
     "Scrum", "Kanban", "Stakeholder Management", "Product Roadmaps", "JIRA", "Confluence",
     // Web Technologies
-    "React", "Angular", "Vue.js", "HTML", "CSS", "REST APIs", "GraphQL", "Microservices",
+    "React", "Angular", "HTML", "CSS", "REST APIs", "GraphQL", "Microservices",
     // Operating Systems
     "Linux", "Ubuntu", "CentOS", "RHEL", "Windows Server", "macOS",
     // Version Control
@@ -183,22 +183,18 @@ const Skills = () => {
         </div>
 
         {/* Additional Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
             <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">100+</div>
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">25+</div>
             <div className="text-gray-600 dark:text-gray-400">Projects Delivered</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
             <div className="text-gray-600 dark:text-gray-400">Technologies Used</div>
-          </div>
-          <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
-            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">10+</div>
-            <div className="text-gray-600 dark:text-gray-400">Certifications</div>
           </div>
         </div>
 
@@ -289,27 +285,6 @@ const Skills = () => {
               </button>
             </div>
           )}
-        </div>
-
-        {/* Certifications */}
-        <div className="mt-20 text-center">
-          <h3 className="apple-headline text-2xl text-white mb-6">Certifications</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {[
-              "AWS Solutions Architect",
-              "ITIL Foundation V3", 
-              "Certified Kubernetes Administrator",
-              "Azure DevOps Engineer"
-            ].map((cert, index) => (
-              <div 
-                key={cert}
-                className="skill-badge animate-fade-in"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                {cert}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

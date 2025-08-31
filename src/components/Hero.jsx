@@ -8,7 +8,7 @@ const Hero = () => {
     description: "I design and operate scalable, secure cloud platforms, lead DevOps transformations, and bridge the gap between technology and business. With 15+ years of experience in insurance, automotive, finance, and manufacturing, I deliver cloud-native solutions that accelerate innovation and reduce costs.",
     highlights: [
       "Led multiple enterprise-scale cloud migrations (AWS, Azure, GCP)",
-      "Expert in Kubernetes, Terraform, CI/CD automation", 
+      "Expert in AWS, Kubernetes, CI/CD automation", 
       "Combine technical depth & product ownership to align IT with business goals"
     ]
   }
@@ -17,13 +17,6 @@ const Hero = () => {
     document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
   }
 
-  const downloadCV = () => {
-    // Create a temporary link for CV download
-    const link = document.createElement('a')
-    link.href = '/cv.pdf' // You'll need to add the actual CV file
-    link.download = 'Jan_Feddern_CV.pdf'
-    link.click()
-  }
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -44,9 +37,9 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-white animate-slide-in-left">
             <div className="mb-8">
-              <h1 className="apple-title text-5xl lg:text-7xl mb-6 leading-tight opacity-0 animate-fade-in animate-delay-200">
+              <h1 className="apple-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight opacity-0 animate-fade-in animate-delay-200">
                 Hello, I'm{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 whitespace-nowrap">
                   {profileSummary.name}
                 </span>
               </h1>
@@ -78,28 +71,17 @@ const Hero = () => {
                 Let's Connect
               </button>
               <button
-                onClick={downloadCV}
-                className="btn-secondary px-10 py-4 text-lg font-medium border-2 border-white/30 backdrop-blur-sm"
+                disabled
+                className="px-10 py-4 text-lg font-medium border-2 border-gray-500/30 backdrop-blur-sm bg-gray-600/20 text-gray-400 cursor-not-allowed opacity-60 rounded-xl transition-all duration-300"
               >
-                Download CV
+                Download CV (coming soon)
               </button>
             </div>
 
             {/* Social Links */}
             <div className="flex space-x-8 mt-12 opacity-0 animate-fade-in animate-delay-800">
               <a
-                href="https://linkedin.com/in/your-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-all duration-300 transform hover:scale-110 hover:translate-y-[-2px]"
-                aria-label="LinkedIn Profile"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/your-username"
+                href="https://github.com/jfeddern"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors duration-200 transform hover:scale-110"
@@ -110,7 +92,7 @@ const Hero = () => {
                 </svg>
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:jan.feddern@gmx.net"
                 className="text-gray-300 hover:text-white transition-colors duration-200 transform hover:scale-110"
                 aria-label="Email Contact"
               >
@@ -124,9 +106,21 @@ const Hero = () => {
           {/* Profile Image/Visual */}
           <div className="relative animate-slide-up">
             <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
-              {/* Placeholder for profile image - you can replace with actual image */}
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
+              {/* Profile Image */}
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/20 p-4">
+                <img 
+                  src="/my-cv/images/profile.jpg"
+                  alt="Jan Feddern - Cloud Solution Architect" 
+                  className="w-full h-full rounded-full object-cover shadow-2xl"
+                  onLoad={() => console.log('Profile image loaded successfully')}
+                  onError={(e) => {
+                    console.log('Profile image failed to load:', e.target.src);
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder if image fails to load */}
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center hidden">
                   <svg className="w-32 h-32 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   </svg>

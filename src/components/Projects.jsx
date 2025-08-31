@@ -1,5 +1,5 @@
-// ABOUTME: Featured projects showcase with interactive cards
-// ABOUTME: Highlights key achievements and technical implementations
+// ABOUTME: Professional experience showcase with interactive cards
+// ABOUTME: Highlights career achievements and technical implementations
 
 import { useState } from 'react'
 
@@ -9,118 +9,169 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Enterprise Cloud Migration Platform",
-      category: "Cloud Architecture",
-      description: "Led the design and implementation of a comprehensive cloud migration platform during a major corporate restructuring, enabling seamless transfer of 100+ applications.",
-      detailedDescription: "During a critical corporate split, I architected and implemented a complete cloud migration platform from scratch. The project involved designing resilient infrastructure, implementing zero-downtime migration strategies, and building comprehensive monitoring solutions. The platform successfully handled the migration of over 100 applications with zero business impact.",
-      technologies: ["AWS", "Kubernetes", "Terraform", "Ansible", "Jenkins", "Prometheus", "Grafana"],
+      title: "DevOps Engineer & Cloud Architect, Product Owner",
+      category: "Automotive",
+      description: "Led the design, build, and operation of a new AWS-based cloud platform during a corporate split, ensuring the separation of applications and infrastructure with zero downtime.",
+      detailedDescription: "Led the design, build, and operation of a new AWS-based cloud platform during a corporate split, ensuring the separation of applications and infrastructure with zero downtime. Defined roadmap, architecture, and stakeholder management for the platform migration while developing custom tooling to boost developer productivity.",
+      technologies: ["AWS", "EKS", "Kubernetes", "Terraform", "Ansible", "Istio", "GitHub Actions", "Jenkins", "Go", "Python", "Kotlin", "Spring Boot", "Grafana", "Prometheus", "Instana", "Wazuh", "OpenSearch", "SonarQube"],
       achievements: [
-        "Zero downtime during migration of critical business applications",
-        "Automated infrastructure provisioning reduced setup time by 95%",
-        "Comprehensive monitoring solution with 99.9% uptime SLA",
-        "Cost optimization strategies reduced cloud spend by 25%"
+        "Defined roadmap, architecture, and stakeholder management for the platform migration",
+        "Automated provisioning of complete AWS infrastructure (VPC, networking, EKS, IAM, RDS, DynamoDB) using Terraform & Ansible",
+        "Migrated >100 applications (frontend/backend) to AWS → ensured business continuity during divestment",
+        "Built CI/CD pipelines with GitHub Actions & Jenkins → accelerated deployments from days to hours",
+        "Developed custom tooling (Go CLI, Prometheus Exporter, Python Lambdas) to boost developer productivity and automate security tasks",
+        "Implemented monitoring & SIEM (Grafana, Instana, Wazuh) → improved incident detection & compliance",
+        "Established service mesh (Istio) and performed load & performance testing (k6) to ensure platform resilience"
       ],
       metrics: {
-        "Applications Migrated": "100+",
-        "Downtime": "0 hours",
-        "Time Saved": "1000+ hours/year",
-        "Cost Reduction": "25%"
+        "Impact": "Zero downtime migration",
+        "Scale": ">100 applications",
+        "Achievement": "Full platform separation"
       },
       image: "🚀",
-      status: "Completed",
-      year: "2022-2023"
+      status: "Current",
+      year: "2022-2025"
     },
     {
       id: 2,
-      title: "Multi-Cloud DevOps Platform",
-      category: "DevOps Transformation",
-      description: "Built a unified DevOps platform supporting AWS, Azure, and GCP, enabling consistent deployment pipelines across multiple cloud providers.",
-      detailedDescription: "Designed and implemented a multi-cloud DevOps platform that standardized deployment processes across AWS, Azure, and GCP. The solution included custom tooling for CI/CD pipeline orchestration, infrastructure as code templates, and comprehensive security scanning integration.",
-      technologies: ["Docker", "Kubernetes", "GitLab CI", "Helm", "Vault", "Terraform", "Python", "Go"],
+      title: "Software Developer",
+      category: "Automotive",
+      description: "Maintained and enhanced a Spring Boot REST service developed in Kotlin as part of the AWS-based cloud platform built during a corporate split.",
+      detailedDescription: "Maintained and enhanced a Spring Boot REST service developed in Kotlin as part of the AWS-based cloud platform built during a corporate split. Extended and optimized existing microservice functionalities while ensuring continuous availability, security, and scalability of mission-critical services.",
+      technologies: ["Kotlin", "Spring Boot", "PostgreSQL", "MongoDB", "AWS", "GitHub Actions", "Terraform", "SonarQube", "Grafana", "Prometheus", "Instana", "Docker", "Podman", "Artifactory"],
       achievements: [
-        "Unified deployment process across 3 cloud providers",
-        "Reduced deployment time from hours to minutes",
-        "Integrated security scanning preventing 50+ vulnerabilities",
-        "Enabled self-service infrastructure for development teams"
+        "Extended and optimized existing microservice functionalities (user/org data via LDAP, API integrations)",
+        "Improved code quality and reliability with automated tests and SonarQube analysis",
+        "Integrated the service with AWS cloud components (RDS, MongoDB) for persistent data handling",
+        "Enhanced performance and resilience through profiling, debugging, and refactoring",
+        "Supported DevOps workflows with CI/CD integration (GitHub Actions, Jenkins) and containerized deployments on Kubernetes (EKS)"
       ],
       metrics: {
-        "Cloud Providers": "3",
-        "Deployment Time": "< 10 minutes",
-        "Vulnerabilities Prevented": "50+",
-        "Teams Enabled": "15+"
+        "Impact": "Continuous service availability",
+        "Scale": "Mission-critical microservice",
+        "Achievement": "Modernized platform features"
       },
-      image: "⚡",
-      status: "Completed", 
-      year: "2021-2022"
+      image: "💻",
+      status: "Current",
+      year: "2022-2025"
     },
     {
       id: 3,
-      title: "Microservices Observability Suite",
-      category: "Monitoring & Operations",
-      description: "Implemented comprehensive observability solution for microservices architecture, providing real-time insights and automated incident response.",
-      detailedDescription: "Created a complete observability stack for a complex microservices environment serving millions of users. The solution integrated distributed tracing, metrics collection, log aggregation, and intelligent alerting to provide unprecedented visibility into system behavior and performance.",
-      technologies: ["Prometheus", "Grafana", "Jaeger", "ELK Stack", "Istio", "Kubernetes", "Node.js"],
+      title: "DevOps Engineer – Cloud Infrastructure",
+      category: "Automotive",
+      description: "Designed and migrated a complete microservices cloud platform from IBM Cloud to AWS, enabling full automation and a year-long, zero-downtime migration of mission-critical applications.",
+      detailedDescription: "Designed and migrated a complete microservices cloud platform from IBM Cloud to AWS, enabling full automation and a year-long, zero-downtime migration of mission-critical applications. Architected and deployed multi-cloud infrastructure using modern DevOps practices and established comprehensive monitoring and observability.",
+      technologies: ["IBM Cloud", "AWS", "EKS", "Kubernetes", "Terraform", "Helm", "Ansible", "Istio", "Go", "Kotlin", "Python", "Jenkins", "GitLab", "GitHub", "Nexus", "Grafana", "Prometheus", "Instana", "BlackDuck"],
       achievements: [
-        "Reduced mean time to resolution (MTTR) by 80%",
-        "Proactive issue detection before customer impact",
-        "Custom dashboards for business and technical metrics",
-        "Automated incident response reduced manual intervention"
+        "Architected and deployed multi-cloud infrastructure (IBM Cloud → AWS) using Terraform, Helm, Kubernetes (EKS)",
+        "Implemented security best practices for Kubernetes (NetworkPolicies, PodSecurityPolicies, vulnerability scanning with BlackDuck)",
+        "Built a CI/CD platform (Jenkins, GitLab/GitHub, Nexus, Helm) supporting dozens of application teams",
+        "Integrated Istio service mesh and Kafka for advanced networking and log management",
+        "Developed a Golang scaling service to auto-scale Kubernetes pods → optimized cost and performance",
+        "Automated VPCs, networking, RDS, MongoDB Atlas, MSK, and load balancers with Terraform modules",
+        "Migrated data from IBM Cloud (Object Storage, MongoDB, PostgreSQL) to AWS S3, RDS, and MongoDB Atlas",
+        "Established monitoring and observability with Instana, Grafana, Prometheus"
       ],
       metrics: {
-        "MTTR Reduction": "80%",
-        "Services Monitored": "200+",
-        "Daily Events": "10M+",
-        "Uptime Improvement": "99.9%"
+        "Impact": "100% automated migration",
+        "Scale": "Multi-cloud platform",
+        "Achievement": "Zero-downtime year-long migration"
       },
-      image: "📊",
+      image: "☁️",
       status: "Completed",
-      year: "2020-2021"
+      year: "2019-2022"
     },
     {
       id: 4,
-      title: "Infrastructure Automation Framework",
-      category: "Infrastructure as Code",
-      description: "Developed a comprehensive IaC framework that standardized infrastructure provisioning across multiple environments and cloud providers.",
-      detailedDescription: "Built a sophisticated Infrastructure as Code framework that enabled consistent, repeatable infrastructure deployments across development, staging, and production environments. The framework included policy as code, cost optimization, and compliance checking built into the deployment process.",
-      technologies: ["Terraform", "Ansible", "Python", "AWS", "Azure", "OPA", "GitHub Actions"],
+      title: "IT Consultant Cloud Technologies / DevOps Engineer",
+      category: "Machinery & IoT",
+      description: "Developed and optimized a cloud-based IoT platform for a leading German automation technology manufacturer. Focused on stability, performance, cost-efficiency, and security to support commercialization of the IoT solution.",
+      detailedDescription: "Developed and optimized a cloud-based IoT platform for a leading German automation technology manufacturer. Focused on stability, performance, cost-efficiency, and security to support commercialization of the IoT solution. Migrated IoT workloads into Docker containers and deployed to Azure Kubernetes Service.",
+      technologies: ["Microsoft Azure", "AKS", "Docker", "Helm", "Java", "Angular", "Spring Boot", "Spring Security", "PostgreSQL", "Flyway", "Grafana", "Azure Vault", "Azure DevOps", "Bitbucket"],
       achievements: [
-        "Standardized infrastructure across 20+ environments",
-        "Automated compliance checking preventing policy violations",
-        "Self-healing infrastructure reduced manual maintenance",
-        "Template library accelerated new project setup by 90%"
+        "Migrated IoT workloads into Docker containers and deployed to Azure Kubernetes Service (AKS) → improved scalability and maintainability",
+        "Enhanced CI/CD pipelines with Azure DevOps → reduced deployment effort by >50%",
+        "Optimized infrastructure resources → achieved significant cloud cost savings",
+        "Secured sensitive data management with Azure Vault",
+        "Improved observability and system stability using Grafana dashboards"
       ],
       metrics: {
-        "Environments": "20+",
-        "Setup Time Reduction": "90%",
-        "Compliance Score": "100%",
-        "Maintenance Reduction": "70%"
+        "Impact": ">50% deployment reduction",
+        "Scale": "IoT platform",
+        "Achievement": "Global rollout enabled"
       },
-      image: "🏗️",
+      image: "🏭",
       status: "Completed",
-      year: "2019-2020"
+      year: "2019-2021"
     },
     {
       id: 5,
-      title: "AI-Powered Operations Dashboard",
-      category: "Innovation Project",
-      description: "Currently developing an intelligent operations dashboard that uses machine learning to predict system issues and optimize resource allocation.",
-      detailedDescription: "An innovative project combining traditional DevOps practices with AI/ML capabilities to create predictive operations management. The system analyzes historical data, current metrics, and usage patterns to predict potential issues and automatically optimize resource allocation.",
-      technologies: ["Python", "TensorFlow", "React", "PostgreSQL", "Redis", "Kubernetes", "FastAPI"],
+      title: "IT Consultant / DevOps Engineer",
+      category: "Banking",
+      description: "Defined and implemented a new requirements-to-deployment process to ensure traceability and governance of changes across applications and infrastructure.",
+      detailedDescription: "Defined and implemented a new requirements-to-deployment process to ensure traceability and governance of changes across applications and infrastructure. Designed and validated an automated deployment pipeline to integrate requirements into DevOps workflows with full compliance support.",
+      technologies: ["Jenkins", "Bitbucket", "GitLab", "GitHub Enterprise", "JIRA", "Confluence", "ServiceNow", "SharePoint"],
       achievements: [
-        "Early anomaly detection with 95% accuracy",
-        "Automated scaling decisions reducing costs by 30%",
-        "Predictive maintenance preventing 80% of outages",
-        "Machine learning pipeline for continuous improvement"
+        "Designed and validated an automated deployment pipeline to integrate requirements into DevOps workflows",
+        "Integrated process management tools (Jira, ServiceNow) with development and operations pipelines",
+        "Conducted proof-of-concepts to validate end-to-end workflows from requirement capture → development → testing → production deployment",
+        "Enabled compliance through full traceability of application and infrastructure changes"
       ],
       metrics: {
-        "Prediction Accuracy": "95%",
-        "Cost Savings": "30%",
-        "Outage Prevention": "80%",
-        "Response Time": "< 2 seconds"
+        "Impact": "Full traceability",
+        "Scale": "Enterprise banking",
+        "Achievement": "Compliance workflow"
       },
-      image: "🤖",
-      status: "In Development",
-      year: "2023-2024"
+      image: "🏦",
+      status: "Completed",
+      year: "2018-2019"
+    },
+    {
+      id: 6,
+      title: "IT Consultant / DevOps Engineer",
+      category: "Insurance",
+      description: "Led migration of legacy WebSphere applications to JBoss and Docker containers, with some apps re-engineered using Spring Boot. Designed and delivered a fully automated application platform based on Infrastructure as Code.",
+      detailedDescription: "Led migration of legacy WebSphere applications to JBoss and Docker containers, with some apps re-engineered using Spring Boot. Designed and delivered a fully automated application platform based on Infrastructure as Code with comprehensive monitoring and security management.",
+      technologies: ["OpenShift", "Kubernetes", "Docker", "VMware", "Ansible", "Spring Boot", "REST", "Instana", "SonarQube", "Elasticsearch", "Kibana", "Fluentd", "HashiCorp Vault", "HashiCorp Consul", "Jenkins", "GitLab"],
+      achievements: [
+        "Automated provisioning of entire platform components (VMware, F5 load balancers, Kubernetes/OpenShift clusters, Jenkins, GitLab, Nexus, SonarQube, LDAP, storage) using Ansible & IaC",
+        "Implemented CI/CD pipelines and automated testing → accelerated and standardized deployments",
+        "Integrated container-based storage with GlusterFS and introduced Camunda BPM for process automation",
+        "Deployed APM tooling (Instana) and centralized logging (Elasticsearch, Fluentd, Kibana) for proactive monitoring",
+        "Established secure credential and secret management with HashiCorp Vault & Consul"
+      ],
+      metrics: {
+        "Impact": "Weeks to hours provisioning",
+        "Scale": "Full platform automation",
+        "Achievement": "Modern container platform"
+      },
+      image: "🛡️",
+      status: "Completed",
+      year: "2017-2018"
+    },
+    {
+      id: 7,
+      title: "Assistant Project Manager / Architect / Software Developer",
+      category: "Insurance",
+      description: "Modernized claims processing for property & liability insurance by replacing legacy 3270 applications with a new portal-based platform.",
+      detailedDescription: "Modernized claims processing for property & liability insurance by replacing legacy 3270 applications with a new portal-based platform. Designed and developed frontend and WebService components while establishing automated deployment and monitoring solutions.",
+      technologies: ["Java/JavaEE", "JSF", "AspectJ", "JavaScript", "Python", "WebSphere Portal Server", "WebSphere Application Server", "JBehave", "Selenium", "Dynatrace", "Splunk", "Jenkins", "XLDeploy"],
+      achievements: [
+        "Designed and developed frontend and WebService components (SOAP/REST) in Java/JavaEE",
+        "Defined a unified implementation approach for Portlets, WebServices, and database architecture",
+        "Coordinated team tasks and sprint planning using Jira & Confluence",
+        "Implemented automated deployments with Jenkins + XLDeploy → reduced release effort",
+        "Improved application stability via Dynatrace performance analysis and Splunk log monitoring",
+        "Established automated test pipelines (JBehave, Selenium) ensuring higher release quality"
+      ],
+      metrics: {
+        "Impact": "Legacy modernization",
+        "Scale": "Claims processing",
+        "Achievement": "Portal platform"
+      },
+      image: "💼",
+      status: "Completed",
+      year: "2015-2016"
     }
   ]
 
@@ -179,9 +230,9 @@ const Projects = () => {
             {/* Key Metrics */}
             <div className="mb-6">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Metrics</h4>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="flex flex-wrap justify-center gap-4">
                 {Object.entries(project.metrics).map(([key, value]) => (
-                  <div key={key} className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                  <div key={key} className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg min-w-[140px] flex-shrink-0">
                     <div className="text-lg font-bold text-primary-600 dark:text-primary-400">{value}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">{key}</div>
                   </div>
@@ -220,12 +271,12 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+    <section id="experience" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">Professional Experience</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Showcase of impactful projects that drove digital transformation and operational excellence
+            15+ years of driving digital transformation across diverse industries
           </p>
         </div>
 
