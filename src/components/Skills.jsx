@@ -2,11 +2,13 @@
 // ABOUTME: Features animated skill cards with proficiency levels and searchable skills list
 
 import { useState, useMemo } from 'react'
+import { useTranslation } from '../hooks/useTranslation'
 
 const Skills = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [currentPage, setCurrentPage] = useState(1)
   const itemsPerPage = 20
+  const { t } = useTranslation()
   const skillCategories = [
     {
       title: "Cloud Platforms",
@@ -122,9 +124,9 @@ const Skills = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/20 to-transparent"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-20">
-          <h2 className="section-title">Technical Skills</h2>
+          <h2 className="section-title">{t('skills.title')}</h2>
           <p className="apple-body text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive toolkit built through years of hands-on experience in enterprise environments
+            {t('skills.description')}
           </p>
         </div>
 
@@ -163,7 +165,7 @@ const Skills = () => {
               <div className="flex items-center mb-6">
                 <span className="text-4xl mr-4 opacity-70">{category.icon}</span>
                 <h3 className="apple-headline text-xl text-gray-900 dark:text-white">
-                  {category.title}
+                  {t(`skills.categories.${category.title}`)}
                 </h3>
               </div>
               
@@ -186,23 +188,23 @@ const Skills = () => {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
-            <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
+            <div className="text-gray-600 dark:text-gray-400">{t('skills.stats.experience')}</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">25+</div>
-            <div className="text-gray-600 dark:text-gray-400">Projects Delivered</div>
+            <div className="text-gray-600 dark:text-gray-400">{t('skills.stats.projects')}</div>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
             <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
-            <div className="text-gray-600 dark:text-gray-400">Technologies Used</div>
+            <div className="text-gray-600 dark:text-gray-400">{t('skills.stats.technologies')}</div>
           </div>
         </div>
 
         {/* Searchable Skills Directory */}
         <div className="mt-24">
-          <h3 className="apple-headline text-3xl text-white mb-12 text-center">Skills Directory</h3>
+          <h3 className="apple-headline text-3xl text-white mb-12 text-center">{t('skills.directory.title')}</h3>
           <p className="apple-body text-lg text-gray-400 text-center mb-8 max-w-2xl mx-auto">
-            Search through my complete technology stack - {allSkills.length} technologies and counting
+            {t('skills.directory.description', { count: allSkills.length })}
           </p>
           
           {/* Search Bar */}
@@ -213,7 +215,7 @@ const Skills = () => {
               </svg>
               <input
                 type="text"
-                placeholder="Search for a technology..."
+                placeholder={t('skills.directory.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => handleSearch(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 bg-gray-800/60 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent backdrop-blur-sm transition-all apple-body"
@@ -225,8 +227,11 @@ const Skills = () => {
           {searchTerm && (
             <div className="text-center mb-6">
               <p className="apple-body text-gray-400">
-                {filteredSkills.length} {filteredSkills.length === 1 ? 'technology' : 'technologies'} found
-                {searchTerm && ` for "${searchTerm}"`}
+                {t('skills.directory.resultsFound', {
+                  count: filteredSkills.length,
+                  type: filteredSkills.length === 1 ? t('skills.directory.technology') : t('skills.directory.technologies')
+                })}
+                {searchTerm && ` ${t('skills.directory.resultsFor', { term: searchTerm })}`}
               </p>
             </div>
           )}
@@ -252,7 +257,7 @@ const Skills = () => {
                 disabled={currentPage === 1}
                 className="px-4 py-2 bg-gray-800/60 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700/60 transition-colors apple-body"
               >
-                Previous
+                {t('skills.directory.pagination.previous')}
               </button>
               
               <div className="flex space-x-2">
@@ -281,7 +286,7 @@ const Skills = () => {
                 disabled={currentPage === totalPages}
                 className="px-4 py-2 bg-gray-800/60 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700/60 transition-colors apple-body"
               >
-                Next
+                {t('skills.directory.pagination.next')}
               </button>
             </div>
           )}

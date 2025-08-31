@@ -2,9 +2,11 @@
 // ABOUTME: Highlights career achievements and technical implementations
 
 import { useState } from 'react'
+import { useTranslation } from '../hooks/useTranslation'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null)
+  const { t } = useTranslation()
 
   const projects = [
     {
@@ -175,7 +177,7 @@ const Projects = () => {
     }
   ]
 
-  const categories = ["All", ...Array.from(new Set(projects.map(p => p.category)))]
+  const categories = [t('experience.categories.All'), ...Array.from(new Set(projects.map(p => t(`experience.categories.${p.category}`))))]
   const [activeCategory, setActiveCategory] = useState("All")
 
   const filteredProjects = activeCategory === "All" 
@@ -229,7 +231,7 @@ const Projects = () => {
 
             {/* Key Metrics */}
             <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Metrics</h4>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t('experience.modal.keyMetrics')}</h4>
               <div className="flex flex-wrap justify-center gap-4">
                 {Object.entries(project.metrics).map(([key, value]) => (
                   <div key={key} className="text-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg min-w-[140px] flex-shrink-0">
@@ -242,7 +244,7 @@ const Projects = () => {
 
             {/* Achievements */}
             <div className="mb-6">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Key Achievements</h4>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t('experience.modal.keyAchievements')}</h4>
               <ul className="space-y-2">
                 {project.achievements.map((achievement, i) => (
                   <li key={i} className="flex items-start text-gray-700 dark:text-gray-300">
@@ -255,7 +257,7 @@ const Projects = () => {
 
             {/* Technologies */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Technologies Used</h4>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t('experience.modal.technologiesUsed')}</h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span key={tech} className="skill-badge">
@@ -274,9 +276,9 @@ const Projects = () => {
     <section id="experience" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="section-title">Professional Experience</h2>
+          <h2 className="section-title">{t('experience.title')}</h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            15+ years of driving digital transformation across diverse industries
+            {t('experience.description')}
           </p>
         </div>
 
@@ -363,7 +365,7 @@ const Projects = () => {
               <div className="flex justify-between items-center">
                 <span className="text-xs text-gray-500 dark:text-gray-400">{project.year}</span>
                 <span className="text-primary-600 dark:text-primary-400 text-sm font-medium hover:underline">
-                  View Details →
+                  {t('experience.viewDetails')}
                 </span>
               </div>
             </div>

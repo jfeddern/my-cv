@@ -1,7 +1,10 @@
 // ABOUTME: Footer component with social links and copyright
 // ABOUTME: Provides final call-to-action and site navigation
 
+import { useTranslation } from '../hooks/useTranslation'
+
 const Footer = () => {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
@@ -26,10 +29,10 @@ const Footer = () => {
   ]
 
   const quickLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#hero', label: t('header.home') },
+    { href: '#skills', label: t('header.skills') },
+    { href: '#experience', label: t('header.experience') },
+    { href: '#contact', label: t('header.contact') },
   ]
 
   const scrollToSection = (href) => {
@@ -55,8 +58,7 @@ const Footer = () => {
               <p className="text-gray-400 text-lg">Cloud Solution Architect | DevOps Engineer | Software Developer | Product Owner</p>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Passionate about building scalable, secure cloud platforms and leading digital transformation initiatives. 
-              Always ready to tackle new challenges and drive innovation.
+              {t('footer.description')}
             </p>
             
             {/* Social Links */}
@@ -80,7 +82,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -97,10 +99,10 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.getInTouch')}</h4>
             <div className="space-y-3">
               <div>
-                <p className="text-gray-400 text-sm">Email</p>
+                <p className="text-gray-400 text-sm">{t('contact.info.email')}</p>
                 <a 
                   href="mailto:jan.feddern@gmx.net" 
                   className="text-gray-300 hover:text-primary-400 transition-colors"
@@ -109,15 +111,8 @@ const Footer = () => {
                 </a>
               </div>
               <div>
-                <p className="text-gray-400 text-sm">Location</p>
+                <p className="text-gray-400 text-sm">{t('contact.info.location')}</p>
                 <p className="text-gray-300">Germany</p>
-              </div>
-              <div>
-                <p className="text-gray-400 text-sm">Status</p>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                  <span className="text-green-400 text-sm">Available for hire</span>
-                </div>
               </div>
             </div>
           </div>
@@ -129,12 +124,12 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="py-6 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} Jan Feddern. All rights reserved.
+            © {currentYear} Jan Feddern. {t('footer.copyright')}
           </div>
           
           <div className="flex items-center space-x-6">
             <div className="text-gray-400 text-sm">
-              Built with React & Tailwind CSS
+              {t('footer.builtWith')}
             </div>
             
             {/* Back to Top */}
@@ -143,7 +138,7 @@ const Footer = () => {
               className="flex items-center text-gray-400 hover:text-primary-400 transition-colors duration-200 text-sm group"
               aria-label="Back to top"
             >
-              <span className="mr-2">Back to top</span>
+              <span className="mr-2">{t('footer.backToTop')}</span>
               <svg 
                 className="w-4 h-4 transform group-hover:-translate-y-1 transition-transform" 
                 fill="none" 
@@ -159,11 +154,11 @@ const Footer = () => {
         {/* Additional Footer Info */}
         <div className="pb-6 text-center">
           <div className="inline-flex items-center text-xs text-gray-500">
-            <span>Hosted on GitHub Pages</span>
+            <span>{t('footer.additionalInfo.hostedOn')}</span>
             <span className="mx-2">•</span>
-            <span>Open for collaboration</span>
+            <span>{t('footer.additionalInfo.openFor')}</span>
             <span className="mx-2">•</span>
-            <span>Last updated: {currentYear}</span>
+            <span>{t('footer.additionalInfo.lastUpdated')}: {currentYear}</span>
           </div>
         </div>
       </div>

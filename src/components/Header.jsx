@@ -1,11 +1,14 @@
-// ABOUTME: Navigation header with dark mode toggle
-// ABOUTME: Provides smooth scrolling navigation and theme switching
+// ABOUTME: Navigation header with language switcher
+// ABOUTME: Provides smooth scrolling navigation and language switching
 
 import { useState, useEffect } from 'react'
+import { useTranslation } from '../hooks/useTranslation'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +48,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -55,6 +58,9 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,6 +89,11 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            
+            {/* Mobile Language Switcher */}
+            <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700 mt-4">
+              <LanguageSwitcher isMobile={true} />
+            </div>
           </div>
         )}
       </nav>

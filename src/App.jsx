@@ -2,6 +2,7 @@
 // ABOUTME: Renders all sections of the modern CV website
 
 import { useState, useEffect } from 'react'
+import { LanguageProvider } from './contexts/LanguageContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Skills from './components/Skills'
@@ -16,16 +17,18 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen dark">
-      <Header />
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen dark">
+        <Header />
+        <main>
+          <Hero />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

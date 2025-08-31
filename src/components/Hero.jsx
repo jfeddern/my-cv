@@ -1,16 +1,15 @@
 // ABOUTME: Hero section with profile summary and key highlights
 // ABOUTME: Features gradient background, profile image, and call-to-action buttons
 
+import { useTranslation } from '../hooks/useTranslation'
+
 const Hero = () => {
+  const { t } = useTranslation()
   const profileSummary = {
     name: "Jan Feddern",
-    title: "Cloud Solution Architect | DevOps Engineer | Software Developer | Product Owner",
-    description: "I design and operate scalable, secure cloud platforms, lead DevOps transformations, and bridge the gap between technology and business. With 15+ years of experience in insurance, automotive, finance, and manufacturing, I deliver cloud-native solutions that accelerate innovation and reduce costs.",
-    highlights: [
-      "Led multiple enterprise-scale cloud migrations (AWS, Azure, GCP)",
-      "Expert in AWS, Kubernetes, CI/CD automation", 
-      "Combine technical depth & product ownership to align IT with business goals"
-    ]
+    title: t('hero.title'),
+    description: t('hero.description'),
+    highlights: t('hero.highlights')
   }
 
   const scrollToContact = () => {
@@ -38,7 +37,7 @@ const Hero = () => {
           <div className="text-white animate-slide-in-left">
             <div className="mb-8">
               <h1 className="apple-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight opacity-0 animate-fade-in animate-delay-200">
-                Hello, I'm{' '}
+                {t('hero.greeting')}{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200 whitespace-nowrap">
                   {profileSummary.name}
                 </span>
@@ -68,13 +67,13 @@ const Hero = () => {
                 onClick={scrollToContact}
                 className="btn-primary px-10 py-4 text-lg font-medium shadow-2xl"
               >
-                Let's Connect
+                {t('hero.buttons.connect')}
               </button>
               <button
                 disabled
                 className="px-10 py-4 text-lg font-medium border-2 border-gray-500/30 backdrop-blur-sm bg-gray-600/20 text-gray-400 cursor-not-allowed opacity-60 rounded-xl transition-all duration-300"
               >
-                Download CV (coming soon)
+                {t('hero.buttons.downloadCV')}
               </button>
             </div>
 
